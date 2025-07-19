@@ -6,7 +6,8 @@
     "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint",
+    "format": "biome format --write && biome lint --write",
+    "lint": "next lint && biome check",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build"
   },
