@@ -5,42 +5,26 @@
 import type { GenFile, GenService } from "@bufbuild/protobuf/codegenv2";
 import { fileDesc, serviceDesc } from "@bufbuild/protobuf/codegenv2";
 import { file_google_protobuf_empty } from "@bufbuild/protobuf/wkt";
-import type { GetPhoneNumberRequestSchema, GetPhoneNumberResponseSchema, GetUserRequestSchema, GetUserResponseSchema, RegisterPhoneRequestSchema, RegisterPhoneResponseSchema } from "./rpc/user_pb";
+import type { SignUpRequestSchema, SignUpResponseSchema } from "./rpc/user_pb";
 import { file_string_phone_user_rpc_user } from "./rpc/user_pb";
 
 /**
  * Describes the file string_phone/user/user.proto.
  */
 export const file_string_phone_user_user: GenFile = /*@__PURE__*/
-  fileDesc("ChxzdHJpbmdfcGhvbmUvdXNlci91c2VyLnByb3RvEhFzdHJpbmdfcGhvbmUudXNlcjLCAgoLVXNlclNlcnZpY2USbQoOR2V0UGhvbmVOdW1iZXISLC5zdHJpbmdfcGhvbmUudXNlci5ycGMuR2V0UGhvbmVOdW1iZXJSZXF1ZXN0Gi0uc3RyaW5nX3Bob25lLnVzZXIucnBjLkdldFBob25lTnVtYmVyUmVzcG9uc2USagoNUmVnaXN0ZXJQaG9uZRIrLnN0cmluZ19waG9uZS51c2VyLnJwYy5SZWdpc3RlclBob25lUmVxdWVzdBosLnN0cmluZ19waG9uZS51c2VyLnJwYy5SZWdpc3RlclBob25lUmVzcG9uc2USWAoHR2V0VXNlchIlLnN0cmluZ19waG9uZS51c2VyLnJwYy5HZXRVc2VyUmVxdWVzdBomLnN0cmluZ19waG9uZS51c2VyLnJwYy5HZXRVc2VyUmVzcG9uc2VCMVovZ2l0aHViLmNvbS9zdHJpbmctcGhvbmUvcHJvdG8vc3RyaW5nX3Bob25lL3VzZXJiBnByb3RvMw", [file_google_protobuf_empty, file_string_phone_user_rpc_user]);
+  fileDesc("ChxzdHJpbmdfcGhvbmUvdXNlci91c2VyLnByb3RvEhFzdHJpbmdfcGhvbmUudXNlcjJkCgtVc2VyU2VydmljZRJVCgZTaWduVXASJC5zdHJpbmdfcGhvbmUudXNlci5ycGMuU2lnblVwUmVxdWVzdBolLnN0cmluZ19waG9uZS51c2VyLnJwYy5TaWduVXBSZXNwb25zZUIxWi9naXRodWIuY29tL3N0cmluZy1waG9uZS9wcm90by9zdHJpbmdfcGhvbmUvdXNlcmIGcHJvdG8z", [file_google_protobuf_empty, file_string_phone_user_rpc_user]);
 
 /**
  * @generated from service string_phone.user.UserService
  */
 export const UserService: GenService<{
   /**
-   * @generated from rpc string_phone.user.UserService.GetPhoneNumber
+   * @generated from rpc string_phone.user.UserService.SignUp
    */
-  getPhoneNumber: {
+  signUp: {
     methodKind: "unary";
-    input: typeof GetPhoneNumberRequestSchema;
-    output: typeof GetPhoneNumberResponseSchema;
-  },
-  /**
-   * @generated from rpc string_phone.user.UserService.RegisterPhone
-   */
-  registerPhone: {
-    methodKind: "unary";
-    input: typeof RegisterPhoneRequestSchema;
-    output: typeof RegisterPhoneResponseSchema;
-  },
-  /**
-   * @generated from rpc string_phone.user.UserService.GetUser
-   */
-  getUser: {
-    methodKind: "unary";
-    input: typeof GetUserRequestSchema;
-    output: typeof GetUserResponseSchema;
+    input: typeof SignUpRequestSchema;
+    output: typeof SignUpResponseSchema;
   },
 }> = /*@__PURE__*/
   serviceDesc(file_string_phone_user_user, 0);
