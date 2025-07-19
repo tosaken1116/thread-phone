@@ -1,4 +1,4 @@
-import { StringItemService } from "@/generated/StringItemServiceStringItemService_pb";
+import { StringItemService } from "@/generated/strings/string_pb";
 import { createClient } from "@connectrpc/connect";
 import { createConnectTransport } from "@connectrpc/connect-web";
 

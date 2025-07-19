@@ -3,7 +3,7 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import { GetPhoneNumberRequest, GetPhoneNumberResponse, GetUserRequest, GetUserResponse, RegisterPhoneRequest, RegisterPhoneResponse } from "./rpc/user_pb";
+import { SignUpRequest, SignUpResponse } from "./rpc/user_pb";
 import { MethodKind } from "@bufbuild/protobuf";
 
 /**
@@ -13,30 +13,12 @@ export const UserService = {
   typeName: "string_phone.user.UserService",
   methods: {
     /**
-     * @generated from rpc string_phone.user.UserService.GetPhoneNumber
+     * @generated from rpc string_phone.user.UserService.SignUp
      */
-    getPhoneNumber: {
-      name: "GetPhoneNumber",
-      I: GetPhoneNumberRequest,
-      O: GetPhoneNumberResponse,
-      kind: MethodKind.Unary,
-    },
-    /**
-     * @generated from rpc string_phone.user.UserService.RegisterPhone
-     */
-    registerPhone: {
-      name: "RegisterPhone",
-      I: RegisterPhoneRequest,
-      O: RegisterPhoneResponse,
-      kind: MethodKind.Unary,
-    },
-    /**
-     * @generated from rpc string_phone.user.UserService.GetUser
-     */
-    getUser: {
-      name: "GetUser",
-      I: GetUserRequest,
-      O: GetUserResponse,
+    signUp: {
+      name: "SignUp",
+      I: SignUpRequest,
+      O: SignUpResponse,
       kind: MethodKind.Unary,
     },
   }

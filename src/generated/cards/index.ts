@@ -1,4 +1,4 @@
-import { CardService } from "@/generated/CardServiceCardService_pb";
+import { CardService } from "@/generated/cards/card_pb";
 import { createClient } from "@connectrpc/connect";
 import { createConnectTransport } from "@connectrpc/connect-web";
 
