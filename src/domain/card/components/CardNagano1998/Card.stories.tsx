@@ -1,17 +1,18 @@
-import type { Meta, StoryObj } from '@storybook/react';
-import { SampleCard } from './SampleCard';
+import type { Meta, StoryObj } from "@storybook/react";
+import { Card } from "./CardNagano1998";
+import { SampleCard } from ".";
 
 const meta = {
-  title: 'Domain/Card/SampleCard',
-  component: SampleCard,
+  title: "Domain/Card/SampleCard",
+  component: Card,
   parameters: {
-    layout: 'centered',
+    layout: "centered",
   },
-  tags: ['autodocs'],
+  tags: ["autodocs"],
   argTypes: {
     // TODO: argTypesを定義してください
   },
-} satisfies Meta<typeof SampleCard>;
+} satisfies Meta<typeof Card>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
