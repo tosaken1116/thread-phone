@@ -8,6 +8,21 @@ importers:
 
   .:
     dependencies:
+      '@bufbuild/connect':
+        specifier: ^0.13.0
+        version: 0.13.0(@bufbuild/protobuf@2.6.1)
+      '@bufbuild/connect-web':
+        specifier: ^0.13.0
+        version: 0.13.0(@bufbuild/protobuf@2.6.1)
+      '@bufbuild/protobuf':
+        specifier: ^2.6.1
+        version: 2.6.1
+      '@bufbuild/protoc-gen-es':
+        specifier: ^2.6.1
+        version: 2.6.1(@bufbuild/protobuf@2.6.1)
+      '@bufbuild/protoplugin':
+        specifier: ^2.6.1
+        version: 2.6.1
       '@connectrpc/connect':
         specifier: ^2.0.2
         version: 2.0.2(@bufbuild/protobuf@2.6.1)
@@ -101,9 +116,15 @@ importers:
       class-variance-authority:
         specifier: ^0.7.1
         version: 0.7.1
+      clsx:
+        specifier: ^2.1.1
+        version: 2.1.1
       cmdk:
         specifier: ^1.1.1
         version: 1.1.1(@types/react-dom@19.1.6(@types/react@19.1.8))(@types/react@19.1.8)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
+      codegenv2:
+        specifier: link:@bufbuild/protobuf/codegenv2
+        version: link:@bufbuild/protobuf/codegenv2
       embla-carousel-react:
         specifier: ^8.6.0
         version: 8.6.0(react@19.1.0)
@@ -146,6 +167,9 @@ importers:
       storybook:
         specifier: ^9.0.17
         version: 9.0.17(@testing-library/dom@10.4.0)
+      tailwind-merge:
+        specifier: ^3.3.1
+        version: 3.3.1
       vaul:
         specifier: ^1.1.2
         version: 1.1.2(@types/react-dom@19.1.6(@types/react@19.1.8))(@types/react@19.1.8)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
@@ -836,8 +860,33 @@ packages:
     cpu: [x64]
     os: [win32]
 
+  '@bufbuild/connect-web@0.13.0':
+    resolution: {integrity: sha512-Ys9VFDWYktD9yFQSLOlkpsD42LonDNMCysLCfjXFuxlupYuf4f7qg0zkT5bESyTfqk4xtRDSSGR3xygaj/ONIQ==}
+    deprecated: Connect has moved to its own org @connectrpc and has a stable v1. Run `npx @connectrpc/connect-migrate@latest` to update. See https://github.com/connectrpc/connect-es/releases/tag/v0.13.1 for details.
+    peerDependencies:
+      '@bufbuild/protobuf': ^1.2.1
+
+  '@bufbuild/connect@0.13.0':
+    resolution: {integrity: sha512-eZSMbVLyUFtXiZNORgCEvv580xKZeYQdMOWj2i/nxOcpXQcrEzTMTA7SZzWv4k4gveWCOSRoWmYDeOhfWXJv0g==}
+    deprecated: Connect has moved to its own org @connectrpc and has a stable v1. Run `npx @connectrpc/connect-migrate@latest` to update. See https://github.com/connectrpc/connect-es/releases/tag/v0.13.1 for details.
+    peerDependencies:
+      '@bufbuild/protobuf': ^1.2.1
+
   '@bufbuild/protobuf@2.6.1':
     resolution: {integrity: sha512-DaG6XlyKpz08bmHY5SGX2gfIllaqtDJ/KwVoxsmP22COOLYwDBe7yD3DZGwXem/Xq7QOc9cuR7R3MpAv5CFfDw==}
+
+  '@bufbuild/protoc-gen-es@2.6.1':
+    resolution: {integrity: sha512-LIxXANgj27QHGZrCekfB/v9zEWzuxDBQyE+91BjY7KbvrELcNQyN0kFGRLy/Eu2bLC4+n1hlCL9TIjN49wV2Fw==}
+    engines: {node: '>=14'}
+    hasBin: true
+    peerDependencies:
+      '@bufbuild/protobuf': 2.6.1
+    peerDependenciesMeta:
+      '@bufbuild/protobuf':
+        optional: true
+
+  '@bufbuild/protoplugin@2.6.1':
+    resolution: {integrity: sha512-pheV/ysWCMSCyRnR7oE2qjEM2QEFFkwYOtHaS86VbxbGfSohcw64rorU7ldCVFZHlFjIsSAqd/yIuTy4J3Itlg==}
 
   '@connectrpc/connect-web@2.0.2':
     resolution: {integrity: sha512-QANMFPiL2o66BdBEctg4TsQLe5ozsBLqcle3dCBp7BwGlNGTY6NnNnqmt+YRnpeMW88GgomJwWNMGCrRD9pRKA==}
@@ -2586,6 +2635,11 @@ packages:
   '@typescript-eslint/visitor-keys@8.37.0':
     resolution: {integrity: sha512-YzfhzcTnZVPiLfP/oeKtDp2evwvHLMe0LOy7oe+hb9KKIumLNohYS9Hgp1ifwpu42YWxhZE8yieggz6JpqO/1w==}
     engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
+
+  '@typescript/vfs@1.6.1':
+    resolution: {integrity: sha512-JwoxboBh7Oz1v38tPbkrZ62ZXNHAk9bJ7c9x0eI5zBfBnBYGhURdbnh7Z4smN/MV48Y5OCcZb58n972UtbazsA==}
+    peerDependencies:
+      typescript: '*'
 
   '@unrs/resolver-binding-android-arm-eabi@1.11.1':
     resolution: {integrity: sha512-ppLRUgHVaGRWUx0R0Ut06Mjo9gBaBkg3v/8AxusGLhsIotbBLuRk51rAzqLC8gq6NyyAojEXglNjzf6R948DNw==}
@@ -6483,6 +6537,9 @@ packages:
     resolution: {integrity: sha512-ot0WnXS9fgdkgIcePe6RHNk1WA8+muPa6cSjeR3V8K27q9BB1rTE3R1p7Hv0z1ZyAc8s6Vvv8DIyWf681MAt0w==}
     engines: {node: '>= 0.4'}
 
+  tailwind-merge@3.3.1:
+    resolution: {integrity: sha512-gBXpgUm/3rp1lMZZrM/w7D8GKqshif0zAymAhbCyIt8KMe+0v9DQ7cdYLR4FHH/cKpdTXb+A/tKKU3eolfsI+g==}
+
   tailwindcss@4.1.11:
     resolution: {integrity: sha512-2E9TBm6MDD/xKYe+dvJZAmg3yxIEDNRc0jwlNyDg/4Fil2QcSLjFKGVff0lAf1jjeaArlG/M75Ey/EYr/OJtBA==}
 
@@ -6672,6 +6729,11 @@ packages:
   typed-array-length@1.0.7:
     resolution: {integrity: sha512-3KS2b+kL7fsuk/eJZ7EQdnEmQoaho/r6KUef7hxvltNA5DR8NAUM+8wJMbJyZ4G9/7i3v5zPBIMN5aybAh2/Jg==}
     engines: {node: '>= 0.4'}
+
+  typescript@5.4.5:
+    resolution: {integrity: sha512-vcI4UpRgg81oIRUFwR0WSIHKt11nJ7SAVlYNIu+QpqeyXP+gpQJy/Z4+F0aGxSE4MqwjyXvW/TzgkLAx2AGHwQ==}
+    engines: {node: '>=14.17'}
+    hasBin: true
 
   typescript@5.8.3:
     resolution: {integrity: sha512-p1diW6TqL9L07nNxvRMM7hMMw4c5XOo/1ibL4aAIGmSAt9slTE1Xgw5KWuof2uTOvCg9BY7ZRi+GaF+7sfgPeQ==}
@@ -7931,7 +7993,32 @@ snapshots:
   '@biomejs/cli-win32-x64@2.1.2':
     optional: true
 
+  '@bufbuild/connect-web@0.13.0(@bufbuild/protobuf@2.6.1)':
+    dependencies:
+      '@bufbuild/connect': 0.13.0(@bufbuild/protobuf@2.6.1)
+      '@bufbuild/protobuf': 2.6.1
+
+  '@bufbuild/connect@0.13.0(@bufbuild/protobuf@2.6.1)':
+    dependencies:
+      '@bufbuild/protobuf': 2.6.1
+
   '@bufbuild/protobuf@2.6.1': {}
+
+  '@bufbuild/protoc-gen-es@2.6.1(@bufbuild/protobuf@2.6.1)':
+    dependencies:
+      '@bufbuild/protoplugin': 2.6.1
+    optionalDependencies:
+      '@bufbuild/protobuf': 2.6.1
+    transitivePeerDependencies:
+      - supports-color
+
+  '@bufbuild/protoplugin@2.6.1':
+    dependencies:
+      '@bufbuild/protobuf': 2.6.1
+      '@typescript/vfs': 1.6.1(typescript@5.4.5)
+      typescript: 5.4.5
+    transitivePeerDependencies:
+      - supports-color
 
   '@connectrpc/connect-web@2.0.2(@bufbuild/protobuf@2.6.1)(@connectrpc/connect@2.0.2(@bufbuild/protobuf@2.6.1))':
     dependencies:
@@ -9692,6 +9779,13 @@ snapshots:
     dependencies:
       '@typescript-eslint/types': 8.37.0
       eslint-visitor-keys: 4.2.1
+
+  '@typescript/vfs@1.6.1(typescript@5.4.5)':
+    dependencies:
+      debug: 4.4.1
+      typescript: 5.4.5
+    transitivePeerDependencies:
+      - supports-color
 
   '@unrs/resolver-binding-android-arm-eabi@1.11.1':
     optional: true
@@ -14234,6 +14328,8 @@ snapshots:
 
   supports-preserve-symlinks-flag@1.0.0: {}
 
+  tailwind-merge@3.3.1: {}
+
   tailwindcss@4.1.11: {}
 
   tapable@2.2.2: {}
@@ -14436,6 +14532,8 @@ snapshots:
       is-typed-array: 1.1.15
       possible-typed-array-names: 1.1.0
       reflect.getprototypeof: 1.0.10
+
+  typescript@5.4.5: {}
 
   typescript@5.8.3: {}
 
