@@ -10,7 +10,7 @@
     "lint": "next lint && biome check",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
-    "generate": "npx scaffdog generate"
+    "generate:dc": "npx scaffdog generate domain-component"
   },
   "dependencies": {
     "next": "15.4.2",
