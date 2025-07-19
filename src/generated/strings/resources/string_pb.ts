@@ -12,7 +12,7 @@ import type { Message } from "@bufbuild/protobuf";
  * Describes the file string_phone/strings/resources/string.proto.
  */
 export const file_string_phone_strings_resources_string: GenFile = /*@__PURE__*/
-  fileDesc("CitzdHJpbmdfcGhvbmUvc3RyaW5ncy9yZXNvdXJjZXMvc3RyaW5nLnByb3RvEh5zdHJpbmdfcGhvbmUuc3RyaW5ncy5yZXNvdXJjZXMikAEKDlRlbXBsYXRlU3RyaW5nEgoKAmlkGAEgASgJEgwKBG5hbWUYAiABKAkSDgoGbGVuZ3RoGAMgASgFEhoKEmRlZmF1bHRfZHVyYWJpbGl0eRgEIAEoBRI4CgR0eXBlGAUgASgOMiouc3RyaW5nX3Bob25lLnN0cmluZ3MucmVzb3VyY2VzLlN0cmluZ1R5cGUi4AEKBlN0cmluZxIKCgJpZBgBIAEoCRIMCgRuYW1lGAIgASgJEg4KBmxlbmd0aBgDIAEoBRISCgpkdXJhYmlsaXR5GAQgASgFEi4KCmNyZWF0ZWRfYXQYBSABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wEi4KCnVwZGF0ZWRfYXQYBiABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wEjgKBHR5cGUYByABKA4yKi5zdHJpbmdfcGhvbmUuc3RyaW5ncy5yZXNvdXJjZXMuU3RyaW5nVHlwZSqbAQoKU3RyaW5nVHlwZRIbChdTVFJJTkdfVFlQRV9VTlNQRUNJRklFRBAAEhEKDVNUUklOR19UWVBFX0EQARIRCg1TVFJJTkdfVFlQRV9CEAISEQoNU1RSSU5HX1RZUEVfQxADEhEKDVNUUklOR19UWVBFX0QQBBIRCg1TVFJJTkdfVFlQRV9FEAUSEQoNU1RSSU5HX1RZUEVfRhAGQj5aPGdpdGh1Yi5jb20vc3RyaW5nLXBob25lL3Byb3RvL3N0cmluZ19waG9uZS9zdHJpbmdzL3Jlc291cmNlc2IGcHJvdG8z", [file_google_protobuf_timestamp]);
+  fileDesc("CitzdHJpbmdfcGhvbmUvc3RyaW5ncy9yZXNvdXJjZXMvc3RyaW5nLnByb3RvEh5zdHJpbmdfcGhvbmUuc3RyaW5ncy5yZXNvdXJjZXMigAEKDlRlbXBsYXRlU3RyaW5nEgoKAmlkGAEgASgJEgwKBG5hbWUYAiABKAkSGgoSZGVmYXVsdF9kdXJhYmlsaXR5GAMgASgFEjgKBHR5cGUYBCABKA4yKi5zdHJpbmdfcGhvbmUuc3RyaW5ncy5yZXNvdXJjZXMuU3RyaW5nVHlwZSLgAQoGU3RyaW5nEgoKAmlkGAEgASgJEgwKBG5hbWUYAiABKAkSDgoGbGVuZ3RoGAMgASgFEhIKCmR1cmFiaWxpdHkYBCABKAUSLgoKY3JlYXRlZF9hdBgFIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXASLgoKdXBkYXRlZF9hdBgGIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXASOAoEdHlwZRgHIAEoDjIqLnN0cmluZ19waG9uZS5zdHJpbmdzLnJlc291cmNlcy5TdHJpbmdUeXBlKpsBCgpTdHJpbmdUeXBlEhsKF1NUUklOR19UWVBFX1VOU1BFQ0lGSUVEEAASEQoNU1RSSU5HX1RZUEVfQRABEhEKDVNUUklOR19UWVBFX0IQAhIRCg1TVFJJTkdfVFlQRV9DEAMSEQoNU1RSSU5HX1RZUEVfRBAEEhEKDVNUUklOR19UWVBFX0UQBRIRCg1TVFJJTkdfVFlQRV9GEAZCPlo8Z2l0aHViLmNvbS9zdHJpbmctcGhvbmUvcHJvdG8vc3RyaW5nX3Bob25lL3N0cmluZ3MvcmVzb3VyY2VzYgZwcm90bzM", [file_google_protobuf_timestamp]);
 
 /**
  * @generated from message string_phone.strings.resources.TemplateString
@@ -29,17 +29,12 @@ export type TemplateString = Message<"string_phone.strings.resources.TemplateStr
   name: string;
 
   /**
-   * @generated from field: int32 length = 3;
-   */
-  length: number;
-
-  /**
-   * @generated from field: int32 default_durability = 4;
+   * @generated from field: int32 default_durability = 3;
    */
   defaultDurability: number;
 
   /**
-   * @generated from field: string_phone.strings.resources.StringType type = 5;
+   * @generated from field: string_phone.strings.resources.StringType type = 4;
    */
   type: StringType;
 };
