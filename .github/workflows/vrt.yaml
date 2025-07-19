@@ -45,10 +45,15 @@ jobs:
           pnpm run:storycap
       - name: run reg-suit
         env:
+          # --- 認証情報 ---
           AWS_ACCESS_KEY_ID: ${{ secrets.CLOUDFLARE_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.CLOUDFLARE_SECRET_ACCESS_KEY }}
-          R2_BUCKET_NAME: ${{ secrets.R2_BUCKET_NAME }}
+
+          # --- R2/S3プラグイン設定 (🔴 ここを修正) ---
+          REG_PUBLISH_S3_PLUGIN_BUCKET_NAME: ${{ secrets.R2_BUCKET_NAME }}
+          AWS_ENDPOINT_URL: ${{ secrets.REG_SUIT_ENDPOINT }} # AWS SDK v3 はこの変数を参照する
+
+          # --- GitHub通知プラグイン設定 ---
           REG_SUIT_CLIENT_ID: ${{ secrets.REG_SUIT_CLIENT_ID }}
-          REG_SUIT_ENDPOINT: ${{ secrets.REG_SUIT_ENDPOINT }}
         run: |
           pnpm reg-suit run
