@@ -12,7 +12,7 @@ import type { Message } from "@bufbuild/protobuf";
  * Describes the file string_phone/cards/rpc/card.proto.
  */
 export const file_string_phone_cards_rpc_card: GenFile = /*@__PURE__*/
-  fileDesc("CiFzdHJpbmdfcGhvbmUvY2FyZHMvcnBjL2NhcmQucHJvdG8SFnN0cmluZ19waG9uZS5jYXJkcy5ycGMiGQoXR2V0VGVtcGxhdGVDYXJkc1JlcXVlc3QiYAoYR2V0VGVtcGxhdGVDYXJkc1Jlc3BvbnNlEkQKEHRlbXBsYXRlX3N0cmluZ3MYASADKAsyKi5zdHJpbmdfcGhvbmUuY2FyZHMucmVzb3VyY2VzLlRlbXBsYXRlQ2FyZCIRCg9HZXRDYXJkc1JlcXVlc3QiRQoQR2V0Q2FyZHNSZXNwb25zZRIxCgVjYXJkcxgBIAMoCzIiLnN0cmluZ19waG9uZS5jYXJkcy5yZXNvdXJjZXMuQ2FyZCIuCg5CdXlDYXJkUmVxdWVzdBIMCgRuYW1lGAEgASgJEg4KBmNyZWRpdBgCIAEoBSJlCg9CdXlDYXJkUmVzcG9uc2USDwoHc3VjY2VzcxgBIAEoCBIPCgdtZXNzYWdlGAIgASgJEjAKBGNhcmQYAyABKAsyIi5zdHJpbmdfcGhvbmUuY2FyZHMucmVzb3VyY2VzLkNhcmRCNlo0Z2l0aHViLmNvbS9zdHJpbmctcGhvbmUvcHJvdG8vc3RyaW5nX3Bob25lL2NhcmRzL3JwY2IGcHJvdG8z", [file_string_phone_cards_resources_card]);
+  fileDesc("CiFzdHJpbmdfcGhvbmUvY2FyZHMvcnBjL2NhcmQucHJvdG8SFnN0cmluZ19waG9uZS5jYXJkcy5ycGMiGQoXR2V0VGVtcGxhdGVDYXJkc1JlcXVlc3QiYAoYR2V0VGVtcGxhdGVDYXJkc1Jlc3BvbnNlEkQKEHRlbXBsYXRlX3N0cmluZ3MYASADKAsyKi5zdHJpbmdfcGhvbmUuY2FyZHMucmVzb3VyY2VzLlRlbXBsYXRlQ2FyZCIRCg9HZXRDYXJkc1JlcXVlc3QiRQoQR2V0Q2FyZHNSZXNwb25zZRIxCgVjYXJkcxgBIAMoCzIiLnN0cmluZ19waG9uZS5jYXJkcy5yZXNvdXJjZXMuQ2FyZCIuCg5CdXlDYXJkUmVxdWVzdBIMCgRuYW1lGAEgASgJEg4KBmNyZWRpdBgCIAEoBSIzCg9CdXlDYXJkUmVzcG9uc2USDwoHc3VjY2VzcxgBIAEoCBIPCgdtZXNzYWdlGAIgASgJQjZaNGdpdGh1Yi5jb20vc3RyaW5nLXBob25lL3Byb3RvL3N0cmluZ19waG9uZS9jYXJkcy9ycGNiBnByb3RvMw", [file_string_phone_cards_resources_card]);
 
 /**
  * @generated from message string_phone.cards.rpc.GetTemplateCardsRequest
@@ -109,11 +109,6 @@ export type BuyCardResponse = Message<"string_phone.cards.rpc.BuyCardResponse"> 
    * @generated from field: string message = 2;
    */
   message: string;
-
-  /**
-   * @generated from field: string_phone.cards.resources.Card card = 3;
-   */
-  card?: Card;
 };
 
 /**
