@@ -25,7 +25,7 @@ export const useCardRepository = ()=>{
     },
     buyCard: async (req:BuyCardRequest) => {
       const response = await client.buyCard(req);
-      return response.card;
+      return response;
     }
   };
 };
