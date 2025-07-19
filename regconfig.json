@@ -3,7 +3,7 @@
     "workingDir": ".reg",
     "actualDir": "__screenshots__",
     "thresholdRate": 0,
-    "addIgnore": true,
+    "threshold": 0,
     "ximgdiff": {
       "invocationType": "client"
     }
@@ -13,12 +13,10 @@
     "reg-notify-github-plugin": {
       "prComment": true,
       "prCommentBehavior": "default",
-      "clientId": "$REG_SUIT_CLIENT_ID",
-      "setCommitStatus": false
+      "clientId": "$REG_SUIT_CLIENT_ID"
     },
     "reg-publish-s3-plugin": {
-      "bucketName": "thread-phone",
-      "customDomain": "vrt-test.tosaken1116.blog",
+      "bucketName": "$R2_BUCKET_NAME",
       "sdkOptions": {
         "region": "auto",
         "endpoint": "$REG_SUIT_ENDPOINT"
