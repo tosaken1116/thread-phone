@@ -1,1 +1,1 @@
-//TDB
+export { getCardsQuery, getTemplateCardsQuery } from "./query";

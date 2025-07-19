@@ -1,6 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import { Card } from "./CardNagano1998";
-import { SampleCard } from ".";
+import { Card } from "@/components/ui/card";
 
 const meta = {
   title: "Domain/Card/SampleCard",
@@ -19,12 +18,12 @@ type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
   args: {
-    // TODO: デフォルトのプロパティを設定してください
+    title: "Sample Card Title",
   },
 };
 
 export const Example: Story = {
   args: {
-    // TODO: 例のプロパティを設定してください
+    title: "Example Card Title",
   },
 };

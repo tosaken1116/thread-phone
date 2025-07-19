@@ -1,1 +1,1 @@
-//TDB
+export { getStringsQuery, getTemplateStringsQuery } from "./query";

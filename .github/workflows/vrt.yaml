@@ -43,12 +43,19 @@ jobs:
       - name: screenshot
         run: |
           pnpm run:storycap
+      - name: Setup Google Cloud credentials
+        uses: google-github-actions/auth@v1
+        with:
+          credentials_json: ${{ secrets.GCP_CREDENTIALS }}
+      - name: Set up Cloud SDK
+        uses: google-github-actions/setup-gcloud@v1
+        with:
+          project_id: ${{ secrets.PROJECT_ID }}
       - name: run reg-suit
         env:
-          AWS_ACCESS_KEY_ID: ${{ secrets.CLOUDFLARE_ACCESS_KEY_ID }}
-          AWS_SECRET_ACCESS_KEY: ${{ secrets.CLOUDFLARE_SECRET_ACCESS_KEY }}
-          R2_BUCKET_NAME: ${{ secrets.R2_BUCKET_NAME }}
+          # --- GitHub通知プラグイン設定 ---
           REG_SUIT_CLIENT_ID: ${{ secrets.REG_SUIT_CLIENT_ID }}
-          REG_SUIT_ENDPOINT: ${{ secrets.REG_SUIT_ENDPOINT }}
+          REG_SUIT_CUSTOM_URI: ${{ secrets.REG_SUIT_CUSTOM_URI }}
+          REG_SUIT_BUCKET_NAME: ${{ secrets.REG_SUIT_BUCKET_NAME }}
         run: |
           pnpm reg-suit run
