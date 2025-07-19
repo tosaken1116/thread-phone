@@ -1,14 +1,14 @@
-import React from 'react';
+import React from "react";
+import { FC } from "react";
+type SampleCardProps = {
+  title: string;
+};
 
-interface SampleCardProps {
-  // TODO: プロパティを定義してください
-}
-
-export const SampleCard: React.FC<SampleCardProps> = (props) => {
+export const SampleCard: FC<SampleCardProps> = (props) => {
   return (
     <div>
       {/* TODO: コンポーネントの実装 */}
-      <h1>SampleCard</h1>
+      <h1>{props.title}</h1>
     </div>
   );
 };

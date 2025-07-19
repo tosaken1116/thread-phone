@@ -1,13 +1,13 @@
-import type { Meta, StoryObj } from '@storybook/react';
-import { SampleCard } from './SampleCard';
+import type { Meta, StoryObj } from "@storybook/react";
+import { SampleCard } from "./SampleCard";
 
 const meta = {
-  title: 'Domain/Card/SampleCard',
+  title: "Domain/Card/SampleCard",
   component: SampleCard,
   parameters: {
-    layout: 'centered',
+    layout: "centered",
   },
-  tags: ['autodocs'],
+  tags: ["autodocs"],
   argTypes: {
     // TODO: argTypesを定義してください
   },
@@ -18,12 +18,12 @@ type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
   args: {
-    // TODO: デフォルトのプロパティを設定してください
+    title: "Sample Card Title",
   },
 };
 
 export const Example: Story = {
   args: {
-    // TODO: 例のプロパティを設定してください
+    title: "Example Card Title",
   },
 };
