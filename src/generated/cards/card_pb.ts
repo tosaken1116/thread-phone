@@ -11,14 +11,14 @@ import { file_string_phone_cards_rpc_card } from "./rpc/card_pb";
  * Describes the file string_phone/cards/card.proto.
  */
 export const file_string_phone_cards_card: GenFile = /*@__PURE__*/
-  fileDesc("Ch1zdHJpbmdfcGhvbmUvY2FyZHMvY2FyZC5wcm90bxISc3RyaW5nX3Bob25lLmNhcmRzMsUCChFTdHJpbmdJdGVtU2VydmljZRJ1ChBHZXRUZW1wbGF0ZUNhcmRzEi8uc3RyaW5nX3Bob25lLmNhcmRzLnJwYy5HZXRUZW1wbGF0ZUNhcmRzUmVxdWVzdBowLnN0cmluZ19waG9uZS5jYXJkcy5ycGMuR2V0VGVtcGxhdGVDYXJkc1Jlc3BvbnNlEl0KCEdldENhcmRzEicuc3RyaW5nX3Bob25lLmNhcmRzLnJwYy5HZXRDYXJkc1JlcXVlc3QaKC5zdHJpbmdfcGhvbmUuY2FyZHMucnBjLkdldENhcmRzUmVzcG9uc2USWgoHQnV5Q2FyZBImLnN0cmluZ19waG9uZS5jYXJkcy5ycGMuQnV5Q2FyZFJlcXVlc3QaJy5zdHJpbmdfcGhvbmUuY2FyZHMucnBjLkJ1eUNhcmRSZXNwb25zZUIyWjBnaXRodWIuY29tL3N0cmluZy1waG9uZS9wcm90by9zdHJpbmdfcGhvbmUvY2FyZHNiBnByb3RvMw", [file_string_phone_cards_rpc_card]);
+  fileDesc("Ch1zdHJpbmdfcGhvbmUvY2FyZHMvY2FyZC5wcm90bxISc3RyaW5nX3Bob25lLmNhcmRzMr8CCgtDYXJkU2VydmljZRJ1ChBHZXRUZW1wbGF0ZUNhcmRzEi8uc3RyaW5nX3Bob25lLmNhcmRzLnJwYy5HZXRUZW1wbGF0ZUNhcmRzUmVxdWVzdBowLnN0cmluZ19waG9uZS5jYXJkcy5ycGMuR2V0VGVtcGxhdGVDYXJkc1Jlc3BvbnNlEl0KCEdldENhcmRzEicuc3RyaW5nX3Bob25lLmNhcmRzLnJwYy5HZXRDYXJkc1JlcXVlc3QaKC5zdHJpbmdfcGhvbmUuY2FyZHMucnBjLkdldENhcmRzUmVzcG9uc2USWgoHQnV5Q2FyZBImLnN0cmluZ19waG9uZS5jYXJkcy5ycGMuQnV5Q2FyZFJlcXVlc3QaJy5zdHJpbmdfcGhvbmUuY2FyZHMucnBjLkJ1eUNhcmRSZXNwb25zZUIyWjBnaXRodWIuY29tL3N0cmluZy1waG9uZS9wcm90by9zdHJpbmdfcGhvbmUvY2FyZHNiBnByb3RvMw", [file_string_phone_cards_rpc_card]);
 
 /**
- * @generated from service string_phone.cards.StringItemService
+ * @generated from service string_phone.cards.CardService
  */
-export const StringItemService: GenService<{
+export const CardService: GenService<{
   /**
-   * @generated from rpc string_phone.cards.StringItemService.GetTemplateCards
+   * @generated from rpc string_phone.cards.CardService.GetTemplateCards
    */
   getTemplateCards: {
     methodKind: "unary";
@@ -26,7 +26,7 @@ export const StringItemService: GenService<{
     output: typeof GetTemplateCardsResponseSchema;
   },
   /**
-   * @generated from rpc string_phone.cards.StringItemService.GetCards
+   * @generated from rpc string_phone.cards.CardService.GetCards
    */
   getCards: {
     methodKind: "unary";
@@ -34,7 +34,7 @@ export const StringItemService: GenService<{
     output: typeof GetCardsResponseSchema;
   },
   /**
-   * @generated from rpc string_phone.cards.StringItemService.BuyCard
+   * @generated from rpc string_phone.cards.CardService.BuyCard
    */
   buyCard: {
     methodKind: "unary";

@@ -1,4 +1,4 @@
-import { UserService } from "@/generated/string_phone/user_connect";
+import { UserService } from "@/generated/UserServiceUserService_pb";
 import { createClient } from "@connectrpc/connect";
 import { createConnectTransport } from "@connectrpc/connect-web";
 
