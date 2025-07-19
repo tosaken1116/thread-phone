@@ -7,13 +7,13 @@ import { BuyCardRequest, BuyCardResponse, GetCardsRequest, GetCardsResponse, Get
 import { MethodKind } from "@bufbuild/protobuf";
 
 /**
- * @generated from service string_phone.cards.StringItemService
+ * @generated from service string_phone.cards.CardService
  */
-export const StringItemService = {
-  typeName: "string_phone.cards.StringItemService",
+export const CardService = {
+  typeName: "string_phone.cards.CardService",
   methods: {
     /**
-     * @generated from rpc string_phone.cards.StringItemService.GetTemplateCards
+     * @generated from rpc string_phone.cards.CardService.GetTemplateCards
      */
     getTemplateCards: {
       name: "GetTemplateCards",
@@ -22,7 +22,7 @@ export const StringItemService = {
       kind: MethodKind.Unary,
     },
     /**
-     * @generated from rpc string_phone.cards.StringItemService.GetCards
+     * @generated from rpc string_phone.cards.CardService.GetCards
      */
     getCards: {
       name: "GetCards",
@@ -31,7 +31,7 @@ export const StringItemService = {
       kind: MethodKind.Unary,
     },
     /**
-     * @generated from rpc string_phone.cards.StringItemService.BuyCard
+     * @generated from rpc string_phone.cards.CardService.BuyCard
      */
     buyCard: {
       name: "BuyCard",

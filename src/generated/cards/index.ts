@@ -1,7 +1,7 @@
-import { StringItemService } from "@/generated/string_phone/cards_connect";
+import { CardService } from "@/generated/CardServiceCardService_pb";
 import { createClient } from "@connectrpc/connect";
 import { createConnectTransport } from "@connectrpc/connect-web";
 
-export const StringItemServiceClientCreator = (baseUrl: string) => createClient(StringItemService, createConnectTransport({
+export const CardServiceClientCreator = (baseUrl: string) => createClient(CardService, createConnectTransport({
   baseUrl,
 }));
