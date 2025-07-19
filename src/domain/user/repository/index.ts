@@ -1,1 +1,25 @@
-//TDB
+import { UserServiceClientCreator } from "@/generated/user";
+import { SignUpRequest } from "@/generated/user/rpc/user_pb";
+import { useMemo } from "react";
+
+export const useUserRepository = () => {
+  const baseURL = useMemo(() => process.env.NEXT_PUBLIC_API_BASE_URL, []);
+  if (!baseURL) {
+    throw new Error("NEXT_PUBLIC_API_BASE_URL is not defined");
+  }
+  const client = useMemo(() => UserServiceClientCreator(baseURL), [baseURL]);
+  const repository = useMemo(() => createUserRepository(client), [client]);
+  return repository;
+};
+
+const createUserRepository = (client: ReturnType<typeof UserServiceClientCreator>) => {
+  return {
+    signUp: async (req: SignUpRequest) => {
+      const response = await client.signUp(req);
+      if (!response.user) {
+        throw new Error("User creation failed");
+      }
+      return response.user;
+    }
+  };
+};
