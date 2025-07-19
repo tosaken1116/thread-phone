@@ -19,6 +19,7 @@
     "vitest": "^3.2.4"
   },
   "devDependencies": {
+    "@biomejs/biome": "2.1.2",
     "@storybook/nextjs": "^9.0.17",
     "@tailwindcss/postcss": "^4",
     "@types/node": "^20",
