@@ -10,7 +10,9 @@
     "lint": "next lint && biome check",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
-    "generate:dc": "npx scaffdog generate domain-component"
+    "generate:dc": "npx scaffdog generate domain-component",
+    "preview-storybook": "http-server storybook-static --ci -p 6007",
+    "run:storycap": "storycap http://localhost:6007 --serverCmd 'pnpm preview-storybook'"
   },
   "dependencies": {
     "next": "15.4.2",
@@ -30,6 +32,12 @@
     "@types/react-dom": "^19",
     "eslint": "^9",
     "eslint-config-next": "15.4.2",
+    "http-server": "^14.1.1",
+    "reg-keygen-git-hash-plugin": "^0.14.3",
+    "reg-notify-github-plugin": "^0.14.4",
+    "reg-publish-s3-plugin": "^0.14.4",
+    "reg-suit": "^0.14.4",
+    "storycap": "^5.0.1",
     "tailwindcss": "^4",
     "typescript": "^5"
   }

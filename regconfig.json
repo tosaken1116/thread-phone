@@ -1,0 +1,28 @@
+{
+  "core": {
+    "workingDir": ".reg",
+    "actualDir": "__screenshots__",
+    "thresholdRate": 0,
+    "addIgnore": true,
+    "ximgdiff": {
+      "invocationType": "client"
+    }
+  },
+  "plugins": {
+    "reg-keygen-git-hash-plugin": true,
+    "reg-notify-github-plugin": {
+      "prComment": true,
+      "prCommentBehavior": "default",
+      "clientId": "$REG_SUIT_CLIENT_ID",
+      "setCommitStatus": false
+    },
+    "reg-publish-s3-plugin": {
+      "bucketName": "thread-phone",
+      "customDomain": "vrt-test.tosaken1116.blog",
+      "sdkOptions": {
+        "region": "auto",
+        "endpoint": "$REG_SUIT_ENDPOINT"
+      }
+    }
+  }
+}
