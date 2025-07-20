@@ -1,0 +1,1 @@
+export { CardCheap } from "./CardCheap";
