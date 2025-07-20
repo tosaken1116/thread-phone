@@ -12,7 +12,7 @@ import type { Message } from "@bufbuild/protobuf";
  * Describes the file string_phone/user/rpc/user.proto.
  */
 export const file_string_phone_user_rpc_user: GenFile = /*@__PURE__*/
-  fileDesc("CiBzdHJpbmdfcGhvbmUvdXNlci9ycGMvdXNlci5wcm90bxIVc3RyaW5nX3Bob25lLnVzZXIucnBjIk4KDVNpZ25VcFJlcXVlc3QSDAoEbmFtZRgBIAEoCRINCgVlbWFpbBgCIAEoCRIQCghwYXNzd29yZBgDIAEoCRIOCgZudW1iZXIYBCABKAkiTgoOU2lnblVwUmVzcG9uc2USLQoCbWUYASABKAsyIS5zdHJpbmdfcGhvbmUudXNlci5yZXNvdXJjZXMuVXNlchINCgV0b2tlbhgCIAEoCSIwCg1TaWduSW5SZXF1ZXN0Eg0KBWVtYWlsGAEgASgJEhAKCHBhc3N3b3JkGAIgASgJIlQKDlNpZ25JblJlc3BvbnNlEhMKC2FjY2Vzc1Rva2VuGAEgASgJEi0KAm1lGAIgASgLMiEuc3RyaW5nX3Bob25lLnVzZXIucmVzb3VyY2VzLlVzZXJCNVozZ2l0aHViLmNvbS9zdHJpbmctcGhvbmUvcHJvdG8vc3RyaW5nX3Bob25lL3VzZXIvcnBjYgZwcm90bzM", [file_string_phone_user_resources_user]);
+  fileDesc("CiBzdHJpbmdfcGhvbmUvdXNlci9ycGMvdXNlci5wcm90bxIVc3RyaW5nX3Bob25lLnVzZXIucnBjIk4KDVNpZ25VcFJlcXVlc3QSDAoEbmFtZRgBIAEoCRINCgVlbWFpbBgCIAEoCRIQCghwYXNzd29yZBgDIAEoCRIOCgZudW1iZXIYBCABKAkiTgoOU2lnblVwUmVzcG9uc2USLQoCbWUYASABKAsyIS5zdHJpbmdfcGhvbmUudXNlci5yZXNvdXJjZXMuVXNlchINCgV0b2tlbhgCIAEoCSIwCg1TaWduSW5SZXF1ZXN0Eg0KBWVtYWlsGAEgASgJEhAKCHBhc3N3b3JkGAIgASgJIlQKDlNpZ25JblJlc3BvbnNlEhMKC2FjY2Vzc1Rva2VuGAEgASgJEi0KAm1lGAIgASgLMiEuc3RyaW5nX3Bob25lLnVzZXIucmVzb3VyY2VzLlVzZXIiDgoMR2V0TWVSZXF1ZXN0Ij4KDUdldE1lUmVzcG9uc2USLQoCbWUYASABKAsyIS5zdHJpbmdfcGhvbmUudXNlci5yZXNvdXJjZXMuVXNlckI1WjNnaXRodWIuY29tL3N0cmluZy1waG9uZS9wcm90by9zdHJpbmdfcGhvbmUvdXNlci9ycGNiBnByb3RvMw", [file_string_phone_user_resources_user]);
 
 /**
  * @generated from message string_phone.user.rpc.SignUpRequest
@@ -111,4 +111,34 @@ export type SignInResponse = Message<"string_phone.user.rpc.SignInResponse"> & {
  */
 export const SignInResponseSchema: GenMessage<SignInResponse> = /*@__PURE__*/
   messageDesc(file_string_phone_user_rpc_user, 3);
+
+/**
+ * @generated from message string_phone.user.rpc.GetMeRequest
+ */
+export type GetMeRequest = Message<"string_phone.user.rpc.GetMeRequest"> & {
+};
+
+/**
+ * Describes the message string_phone.user.rpc.GetMeRequest.
+ * Use `create(GetMeRequestSchema)` to create a new message.
+ */
+export const GetMeRequestSchema: GenMessage<GetMeRequest> = /*@__PURE__*/
+  messageDesc(file_string_phone_user_rpc_user, 4);
+
+/**
+ * @generated from message string_phone.user.rpc.GetMeResponse
+ */
+export type GetMeResponse = Message<"string_phone.user.rpc.GetMeResponse"> & {
+  /**
+   * @generated from field: string_phone.user.resources.User me = 1;
+   */
+  me?: User;
+};
+
+/**
+ * Describes the message string_phone.user.rpc.GetMeResponse.
+ * Use `create(GetMeResponseSchema)` to create a new message.
+ */
+export const GetMeResponseSchema: GenMessage<GetMeResponse> = /*@__PURE__*/
+  messageDesc(file_string_phone_user_rpc_user, 5);
 
