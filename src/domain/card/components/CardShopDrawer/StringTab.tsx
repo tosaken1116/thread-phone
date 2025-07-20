@@ -61,6 +61,7 @@ const mockStrings: String[] = [
 
 export function StringTab() {
   const [selectedString, setSelectedString] = useState<StringType | null>(null);
+  const [length, setLength] = useState(1);
   const client = useQueryClient();
   const repository = useStringRepository();
   const { mutate: purchaseString } = useMutation(
@@ -92,20 +93,29 @@ export function StringTab() {
         {mockStrings.map((string) => (
           <li
             key={string.id}
-            className={`w-[180px] h-[150px] border rounded-[9px] cursor-pointer hover:scale-105 transition-all duration-300 flex items-center justify-center flex-col ${
-              selectedString === string.type ? "bg-green-500 text-white" : ""
+            className={`w-[180px] h-[150px] border-2 rounded-[9px] cursor-pointer hover:scale-105 transition-all duration-300 flex items-center justify-center flex-col ${
+              selectedString === string.type ? "border-blue-500" : ""
             }`}
             onClick={() => handleSelect(string.type)}
           >
             <div className="text-lg font-semibold">{string.name}</div>
-            <div className="text-sm">{string.length}m</div>
-            <div className="text-sm">{string.durability}%</div>
           </li>
         ))}
       </ul>
+      <div className="flex items-end text-[30px] gap-1">
+        長さ：
+        <Input
+          type="text"
+          className="w-[80px] mt-4 "
+          placeholder="糸の長さを入力"
+          value={length}
+          onChange={(e) => setLength(Number(e.target.value))}
+        />
+        m
+      </div>
       <Button
         type="submit"
-        className="w-[180px] h-[50px] text-sm bg-green-500 text-white rounded-[9px] mx-auto mt-4 cursor-pointer"
+        className="w-[180px] h-[50px] text-sm bg-blue-500 text-white rounded-[9px] mx-auto mt-4 cursor-pointer"
         disabled={selectedString === null}
       >
         購入する

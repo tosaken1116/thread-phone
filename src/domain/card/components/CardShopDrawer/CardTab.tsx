@@ -8,6 +8,7 @@ import { CardTokyo1964 } from "@/domain/card/components/CardTokyo1964/CardTokyo1
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { buyCardMutation } from "../../usecase";
 import { useCardRepository } from "../../repository";
+import { Button } from "@/components/ui/button";
 
 const telecards: Record<CardType, React.ReactNode> = {
   [CardType.UNSPECIFIED]: null,
@@ -38,28 +39,28 @@ const mockCards: Card[] = [
     $typeName: "string_phone.cards.resources.Card",
     id: "3",
     name: "C",
-    credit: 300,
+    credit: 500,
     type: CardType.C,
   },
   {
     $typeName: "string_phone.cards.resources.Card",
     id: "4",
     name: "D",
-    credit: 400,
+    credit: 1050,
     type: CardType.D,
   },
   {
     $typeName: "string_phone.cards.resources.Card",
     id: "5",
     name: "E",
-    credit: 500,
+    credit: 5000,
     type: CardType.E,
   },
   {
     $typeName: "string_phone.cards.resources.Card",
     id: "6",
     name: "F",
-    credit: 600,
+    credit: 10000,
     type: CardType.F,
   },
 ];
@@ -91,7 +92,7 @@ export function CardTab() {
   };
 
   return (
-    <>
+    <form onSubmit={handlePurchase}>
       <ul className="mt-4 grid grid-cols-3 gap-6 mx-auto">
         {mockCards.map((card) => (
           <li
@@ -109,18 +110,18 @@ export function CardTab() {
               {telecards[card.type]}
             </div>
             <div className="text-md text-center font-light">
-              {card.credit}円
+              {card.credit}円分
             </div>
           </li>
         ))}
       </ul>
-      <button
+      <Button
+        type="submit"
         className="w-[180px] h-[50px] text-sm bg-blue-500 text-white rounded-[9px] mx-auto mt-4 cursor-pointer"
-        onClick={handlePurchase}
         disabled={!selectedCard}
       >
         購入する
-      </button>
-    </>
+      </Button>
+    </form>
   );
 }
