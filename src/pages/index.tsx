@@ -1,8 +1,7 @@
-import * as THREE from "three";
-import { Geist, Geist_Mono } from "next/font/google";
-import { Canvas, ThreeElements, useFrame } from "@react-three/fiber";
-import { useRef, useState } from "react";
+import { Canvas } from "@react-three/fiber";
 import CardShopDrawer from "@/domain/card/components/CardShopDrawer/CardShopDrawer";
+import { OrbitControls } from '@react-three/drei'
+import { PhoneBox } from "@/components/PhoneBox";
 
 export default function Home() {
   return (
@@ -11,6 +10,7 @@ export default function Home() {
         camera={{ position: [0, 0, 15] }}
         style={{ width: "100vw", height: "100vh" }}
       >
+        <OrbitControls />
         <ambientLight intensity={Math.PI / 2} />
         <spotLight
           position={[10, 10, 10]}
@@ -20,51 +20,12 @@ export default function Home() {
           intensity={Math.PI}
         />
         <pointLight position={[-10, -10, -10]} decay={0} intensity={Math.PI} />
-        <Box
-          position={[-6, -1, 0]}
-          rotation={[-Math.PI / 10, 0, 0]}
-          scale={0.5}
-        />
-        {/* <Box position={[0, -1, 0]} rotation={[-Math.PI / 10, 0, 0]} /> */}
-        {/* <Box
-          position={[6, -1, 0]}
-          rotation={[-Math.PI / 10, 0, 0]}
-          scale={0.5}
-        />
-        <Box
-          position={[-6, -1, 0]}
-          rotation={[-Math.PI / 10, 0, 0]}
-          scale={0.5}
-        />
-        <Box position={[0, -1, 0]} rotation={[-Math.PI / 10, 0, 0]} />
-        <Box
-          position={[6, -1, 0]}
-          rotation={[-Math.PI / 10, 0, 0]}
-          scale={0.5}
-        /> */}
+
+        <PhoneBox/>
+
       </Canvas>
       <CardShopDrawer />
     </div>
   );
 }
 
-function Box(props: ThreeElements["mesh"]) {
-  const meshRef = useRef<THREE.Mesh>(null!);
-  const [hovered, setHover] = useState(false);
-  const [active, setActive] = useState(false);
-  return (
-    <mesh
-      {...props}
-      ref={meshRef}
-      scale={active ? 1.5 : 1}
-      onClick={(event) => setActive(!active)}
-      onPointerOver={(event) => setHover(true)}
-      onPointerOut={(event) => setHover(false)}
-    >
-      <boxGeometry args={[5, 5, 5]} rotateX={[Math.PI / 2, 0, 0]} />
-      <meshStandardMaterial
-        color={hovered ? "hotpink" : "rgb(129, 212, 102)"}
-      />
-    </mesh>
-  );
-}
