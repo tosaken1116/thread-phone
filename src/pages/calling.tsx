@@ -1,4 +1,4 @@
-import CardShopDrawer from "@/components/CardShopDrawer";
+import CardShopDrawer from "@/domain/card/components/CardShopDrawer/CardShopDrawer";
 
 export default function CallScreen() {
   const phoneNumber = "090-2733-2733";

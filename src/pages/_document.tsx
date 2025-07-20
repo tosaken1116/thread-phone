@@ -1,4 +1,3 @@
-import CardShopDrawer from "@/components/CardShopDrawer";
 import Sidebar from "@/components/Sidebar";
 import { Html, Head, Main, NextScript } from "next/document";
 

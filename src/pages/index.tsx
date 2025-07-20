@@ -2,12 +2,15 @@ import * as THREE from "three";
 import { Geist, Geist_Mono } from "next/font/google";
 import { Canvas, ThreeElements, useFrame } from "@react-three/fiber";
 import { useRef, useState } from "react";
-import CardShopDrawer from "@/components/CardShopDrawer";
+import CardShopDrawer from "@/domain/card/components/CardShopDrawer/CardShopDrawer";
 
 export default function Home() {
   return (
-    <div className={`w-full h-full`}>
-      <Canvas>
+    <div className={`w-full h-[100vh]`}>
+      <Canvas
+        camera={{ position: [0, 0, 15] }}
+        style={{ width: "100vw", height: "100vh" }}
+      >
         <ambientLight intensity={Math.PI / 2} />
         <spotLight
           position={[10, 10, 10]}
@@ -17,7 +20,28 @@ export default function Home() {
           intensity={Math.PI}
         />
         <pointLight position={[-10, -10, -10]} decay={0} intensity={Math.PI} />
-        <Box position={[0, -1, 0]} rotation={[-Math.PI / 15, 0, 0]} />
+        <Box
+          position={[-6, -1, 0]}
+          rotation={[-Math.PI / 10, 0, 0]}
+          scale={0.5}
+        />
+        {/* <Box position={[0, -1, 0]} rotation={[-Math.PI / 10, 0, 0]} /> */}
+        {/* <Box
+          position={[6, -1, 0]}
+          rotation={[-Math.PI / 10, 0, 0]}
+          scale={0.5}
+        />
+        <Box
+          position={[-6, -1, 0]}
+          rotation={[-Math.PI / 10, 0, 0]}
+          scale={0.5}
+        />
+        <Box position={[0, -1, 0]} rotation={[-Math.PI / 10, 0, 0]} />
+        <Box
+          position={[6, -1, 0]}
+          rotation={[-Math.PI / 10, 0, 0]}
+          scale={0.5}
+        /> */}
       </Canvas>
       <CardShopDrawer />
     </div>
@@ -37,7 +61,7 @@ function Box(props: ThreeElements["mesh"]) {
       onPointerOver={(event) => setHover(true)}
       onPointerOut={(event) => setHover(false)}
     >
-      <boxGeometry args={[10, 10, 0.5]} />
+      <boxGeometry args={[5, 5, 5]} rotateX={[Math.PI / 2, 0, 0]} />
       <meshStandardMaterial
         color={hovered ? "hotpink" : "rgb(129, 212, 102)"}
       />

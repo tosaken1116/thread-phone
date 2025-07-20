@@ -13,44 +13,77 @@ import {
   DrawerTrigger,
 } from "@/components/ui/drawer";
 import { ShoppingCart } from "lucide-react";
+import { useSuspenseQuery } from "@tanstack/react-query";
+import { getTemplateCardsQuery } from "../../usecase";
+import { useCardRepository } from "../../repository";
+import { Card, CardType } from "@/generated/cards/resources/card_pb";
 
-const telecards = [
+const telecards: Record<CardType, React.ReactNode> = {
+  [CardType.UNSPECIFIED]: null,
+  [CardType.A]: <CardCheap scale={0.3} price={100} />,
+  [CardType.B]: <CardCheap scale={0.3} price={200} />,
+  [CardType.C]: <CardGeneral50 scale={0.3} />,
+  [CardType.D]: <CardGeneral105 scale={0.3} />,
+  [CardType.E]: <CardNagano1998 scale={0.3} />,
+  [CardType.F]: <CardTokyo1964 scale={0.3} />,
+} as const;
+
+const mockCards: Card[] = [
   {
-    id: 1,
-    price: 100,
-    component: <CardCheap scale={0.3} price={100} />,
+    $typeName: "string_phone.cards.resources.Card",
+    id: "1",
+    name: "A",
+    credit: 100,
+    type: CardType.A,
   },
   {
-    id: 2,
-    price: 200,
-    component: <CardCheap scale={0.3} price={200} />,
+    $typeName: "string_phone.cards.resources.Card",
+    id: "2",
+    name: "B",
+    credit: 200,
+    type: CardType.B,
   },
   {
-    id: 3,
-    price: 500,
-    component: <CardGeneral50 scale={0.3} />,
+    $typeName: "string_phone.cards.resources.Card",
+    id: "3",
+    name: "C",
+    credit: 300,
+    type: CardType.C,
   },
   {
-    id: 4,
-    price: 1000,
-    component: <CardGeneral105 scale={0.3} />,
+    $typeName: "string_phone.cards.resources.Card",
+    id: "4",
+    name: "D",
+    credit: 400,
+    type: CardType.D,
   },
   {
-    id: 5,
-    price: 10000,
-    component: <CardNagano1998 scale={0.3} />,
+    $typeName: "string_phone.cards.resources.Card",
+    id: "5",
+    name: "E",
+    credit: 500,
+    type: CardType.E,
   },
   {
-    id: 6,
-    price: 10000,
-    component: <CardTokyo1964 scale={0.3} />,
+    $typeName: "string_phone.cards.resources.Card",
+    id: "6",
+    name: "F",
+    credit: 600,
+    type: CardType.F,
   },
 ];
 
 export default function CardShopDrawer() {
-  const [selectedCard, setSelectedCard] = useState<number | null>(null);
+  // const repository = useCardRepository();
+  // const { data } = useSuspenseQuery(getTemplateCardsQuery.query(repository));
 
-  const handleCardClick = (id: number) => {
+  const data = {
+    templateStrings: mockCards,
+  };
+
+  const [selectedCard, setSelectedCard] = useState<CardType | null>(null);
+
+  const handleCardClick = (id: CardType) => {
     if (selectedCard === id) {
       setSelectedCard(null);
       return;
@@ -59,9 +92,8 @@ export default function CardShopDrawer() {
   };
 
   const handlePurchase = () => {
-    if (selectedCard) {
-      console.log(selectedCard);
-    }
+    if (!selectedCard) return;
+    // const { mutate: purchaseCard } = useMutationState();
   };
 
   return (
@@ -77,19 +109,19 @@ export default function CardShopDrawer() {
           <DrawerClose className="absolute right-4 top-4">✕</DrawerClose>
         </DrawerHeader>
         <ul className="mt-4 grid grid-cols-3 gap-6 mx-auto">
-          {telecards.map((card) => (
+          {data.templateStrings.map((card) => (
             <li
               className={`w-[180px] h-[330px] cursor-pointer hover:scale-105 transition-all duration-300 ${
-                selectedCard === card.id ? "bg-blue-500" : ""
+                selectedCard === card.type ? "bg-blue-500" : ""
               }`}
               key={card.id}
-              onClick={() => handleCardClick(card.id)}
+              onClick={() => handleCardClick(card.type)}
             >
               <div className="w-[180px] h-[270px] rounded-[9px]">
-                {card.component}
+                {telecards[card.type]}
               </div>
               <div className="text-md text-center font-light">
-                {card.price}円
+                {card.credit}円
               </div>
             </li>
           ))}

@@ -6,10 +6,6 @@ export default function Sidebar() {
       label: "Home",
       href: "/home",
     },
-    // {
-    //   label: "課金",
-    //   href: "/telecard",
-    // },
     {
       label: "通話",
       href: "/calling",
@@ -22,7 +18,7 @@ export default function Sidebar() {
       </div>
       <nav className="flex flex-col gap-2">
         {menuItems.map((item) => (
-          <Link href={item.href}>
+          <Link href={item.href} key={item.label}>
             <button className="border px-4 py-2 w-full text-left cursor-pointer">
               {item.label}
             </button>
