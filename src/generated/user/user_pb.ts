@@ -5,14 +5,14 @@
 import type { GenFile, GenService } from "@bufbuild/protobuf/codegenv2";
 import { fileDesc, serviceDesc } from "@bufbuild/protobuf/codegenv2";
 import { file_google_protobuf_empty } from "@bufbuild/protobuf/wkt";
-import type { SignUpRequestSchema, SignUpResponseSchema } from "./rpc/user_pb";
+import type { SignInRequestSchema, SignInResponseSchema, SignUpRequestSchema, SignUpResponseSchema } from "./rpc/user_pb";
 import { file_string_phone_user_rpc_user } from "./rpc/user_pb";
 
 /**
  * Describes the file string_phone/user/user.proto.
  */
 export const file_string_phone_user_user: GenFile = /*@__PURE__*/
-  fileDesc("ChxzdHJpbmdfcGhvbmUvdXNlci91c2VyLnByb3RvEhFzdHJpbmdfcGhvbmUudXNlcjJkCgtVc2VyU2VydmljZRJVCgZTaWduVXASJC5zdHJpbmdfcGhvbmUudXNlci5ycGMuU2lnblVwUmVxdWVzdBolLnN0cmluZ19waG9uZS51c2VyLnJwYy5TaWduVXBSZXNwb25zZUIxWi9naXRodWIuY29tL3N0cmluZy1waG9uZS9wcm90by9zdHJpbmdfcGhvbmUvdXNlcmIGcHJvdG8z", [file_google_protobuf_empty, file_string_phone_user_rpc_user]);
+  fileDesc("ChxzdHJpbmdfcGhvbmUvdXNlci91c2VyLnByb3RvEhFzdHJpbmdfcGhvbmUudXNlcjK7AQoLVXNlclNlcnZpY2USVQoGU2lnblVwEiQuc3RyaW5nX3Bob25lLnVzZXIucnBjLlNpZ25VcFJlcXVlc3QaJS5zdHJpbmdfcGhvbmUudXNlci5ycGMuU2lnblVwUmVzcG9uc2USVQoGU2lnbkluEiQuc3RyaW5nX3Bob25lLnVzZXIucnBjLlNpZ25JblJlcXVlc3QaJS5zdHJpbmdfcGhvbmUudXNlci5ycGMuU2lnbkluUmVzcG9uc2VCMVovZ2l0aHViLmNvbS9zdHJpbmctcGhvbmUvcHJvdG8vc3RyaW5nX3Bob25lL3VzZXJiBnByb3RvMw", [file_google_protobuf_empty, file_string_phone_user_rpc_user]);
 
 /**
  * @generated from service string_phone.user.UserService
@@ -25,6 +25,14 @@ export const UserService: GenService<{
     methodKind: "unary";
     input: typeof SignUpRequestSchema;
     output: typeof SignUpResponseSchema;
+  },
+  /**
+   * @generated from rpc string_phone.user.UserService.SignIn
+   */
+  signIn: {
+    methodKind: "unary";
+    input: typeof SignInRequestSchema;
+    output: typeof SignInResponseSchema;
   },
 }> = /*@__PURE__*/
   serviceDesc(file_string_phone_user_user, 0);
