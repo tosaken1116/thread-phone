@@ -23,43 +23,43 @@ const mockCards: Card[] = [
   {
     $typeName: "string_phone.cards.resources.Card",
     id: "1",
-    name: "A",
+    name: "安価なテレフォンカード10",
     credit: 100,
     type: CardType.A,
   },
   {
     $typeName: "string_phone.cards.resources.Card",
     id: "2",
-    name: "B",
+    name: "安価なテレフォンカード20",
     credit: 200,
     type: CardType.B,
   },
   {
     $typeName: "string_phone.cards.resources.Card",
     id: "3",
-    name: "C",
-    credit: 300,
+    name: "普通のテレフォンカード50",
+    credit: 500,
     type: CardType.C,
   },
   {
     $typeName: "string_phone.cards.resources.Card",
     id: "4",
-    name: "D",
-    credit: 400,
+    name: "普通のテレフォンカード105",
+    credit: 1050,
     type: CardType.D,
   },
   {
     $typeName: "string_phone.cards.resources.Card",
     id: "5",
-    name: "E",
-    credit: 500,
+    name: "長野オリンピック記念テレフォンカード",
+    credit: 5000,
     type: CardType.E,
   },
   {
     $typeName: "string_phone.cards.resources.Card",
     id: "6",
-    name: "F",
-    credit: 600,
+    name: "東京オリンピック記念テレフォンカード",
+    credit: 10000,
     type: CardType.F,
   },
 ];
@@ -76,13 +76,23 @@ export function CardTab() {
     setSelectedCard((prev) => (prev === id ? null : id));
   };
 
-  const handlePurchase = () => {
+  const handlePurchase = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
     if (!selectedCard) return;
-    purchaseCard({
-      $typeName: "string_phone.cards.rpc.BuyCardRequest",
-      name: selectedCard.toString(),
-      credit: 100,
-    });
+    if (
+      confirm(
+        `${mockCards.find((card) => card.type === selectedCard)?.name} を購入`
+      )
+    ) {
+      purchaseCard({
+        $typeName: "string_phone.cards.rpc.BuyCardRequest",
+        name: selectedCard.toString(),
+        credit: 100,
+      });
+    }
+    setTimeout(() => {
+      alert(`${CardType[selectedCard]} を 1枚 購入しました`);
+    }, 300);
   };
 
   return (

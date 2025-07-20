@@ -36,7 +36,7 @@ export const CardGeneral105: React.FC<CardProps> = (props) => {
           </div>
           <div className="flex justify-center">
             <span className="text-white text-[40px] font-bold bg-[#70bb48] rounded-[50%] px-10 py-1 mx-auto mt-[-50px]">
-              テレホンカード
+              テレフォンカード
             </span>
           </div>
         </div>

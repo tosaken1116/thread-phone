@@ -3,6 +3,7 @@ import { OlympicCircles } from "../OlympicCircles/OlympicCircles";
 
 interface CardProps {
   scale: number;
+  isUsed?: boolean;
 }
 
 export const CardNagano1998: React.FC<CardProps> = (props) => {
@@ -47,6 +48,12 @@ export const CardNagano1998: React.FC<CardProps> = (props) => {
           <span>50</span>
         </div>
       </div>
+      {props.isUsed && (
+        <>
+          <div className="absolute top-100 right-3.5 w-[15px] h-[15px] bg-black rounded-full"></div>
+          <div className="absolute top-120 right-3.5 w-[15px] h-[15px] bg-black rounded-full"></div>
+        </>
+      )}
     </div>
   );
 };

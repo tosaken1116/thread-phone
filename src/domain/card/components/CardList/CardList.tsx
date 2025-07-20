@@ -21,9 +21,9 @@ const telecards: Record<CardType, React.ReactNode> = {
   [CardType.UNSPECIFIED]: null,
   [CardType.A]: <CardCheap scale={0.15} price={100} />,
   [CardType.B]: <CardCheap scale={0.15} price={200} />,
-  [CardType.C]: <CardGeneral50 scale={0.15} />,
+  [CardType.C]: <CardGeneral50 scale={0.15} isUsed />,
   [CardType.D]: <CardGeneral105 scale={0.15} />,
-  [CardType.E]: <CardNagano1998 scale={0.15} />,
+  [CardType.E]: <CardNagano1998 scale={0.15} isUsed />,
   [CardType.F]: <CardTokyo1964 scale={0.15} />,
 };
 
@@ -67,7 +67,7 @@ export default function CardList({ cards }: Props) {
 
   return (
     <div className="max-w-5xl mx-auto p-4">
-      <h2 className="text-xl font-bold mb-4">カード一覧</h2>
+      <h2 className="text-2xl font-bold mb-4">持っているカード</h2>
       {errors.cardId?.message && (
         <p className="text-red-500 text-sm">{errors.cardId.message}</p>
       )}
@@ -75,14 +75,16 @@ export default function CardList({ cards }: Props) {
         {mockCards.map((card) => (
           <li
             key={card.id}
-            className={`w-[90px] h-[135px] cursor-pointer hover:scale-105 transition-all duration-300 rounded-lg p-1 ${
-              card.id === cardId ? "bg-blue-500" : "bg-white"
-            }`}
+            className={`w-[90px] h-[135px] cursor-pointer hover:scale-105 transition-all duration-300 rounded-lg p-1`}
             onClick={() => {
               setValue("cardId", card.id); // 💡 フォームに反映
             }}
           >
-            <div className="w-[90px] h-[135px] rounded-[9px] mx-auto">
+            <div
+              className={`w-[94px] h-[139px] rounded-[6px] mx-auto border-2 ${
+                card.id === cardId ? "border-blue-500" : "border-transparent"
+              }`}
+            >
               {telecards[card.type]}
             </div>
           </li>

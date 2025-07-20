@@ -2,6 +2,7 @@ import React from "react";
 
 interface CardProps {
   scale: number;
+  isUsed?: boolean;
 }
 
 export const CardGeneral50: React.FC<CardProps> = (props) => {
@@ -34,7 +35,7 @@ export const CardGeneral50: React.FC<CardProps> = (props) => {
           </div>
           <div className="flex justify-center">
             <span className="text-white text-[40px] font-bold bg-[#2996c8] rounded-[50%] px-10 py-1 mx-auto mt-[-50px]">
-              テレホンカード
+              テレフォンカード
             </span>
           </div>
         </div>
@@ -47,6 +48,11 @@ export const CardGeneral50: React.FC<CardProps> = (props) => {
           </div>
           <span className="text-[25px]">MTTω</span>
         </div>
+        {props.isUsed && (
+          <>
+            <div className="absolute top-6 right-110 w-[15px] h-[15px] bg-black rounded-full"></div>
+          </>
+        )}
       </div>
     </div>
   );
