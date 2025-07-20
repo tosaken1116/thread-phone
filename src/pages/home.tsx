@@ -1,3 +1,5 @@
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
 import CardList from "@/domain/card/components/CardList/CardList";
 import CardShopDrawer from "@/domain/card/components/CardShopDrawer/CardShopDrawer";
 import StringList from "@/domain/string/components/StringList/StringList";
@@ -41,7 +43,7 @@ export default function Home() {
   const onSubmit = async (data: FormValues) => {
     const valid = await trigger("phoneNumber");
     if (!valid) return;
-    if (confirm("通話を開始しますか？")) {
+    if (confirm(`${data.phoneNumber} との通話を開始しますか？`)) {
       console.log(data);
       // handleSubmit(onSubmit)();
     }
@@ -53,15 +55,15 @@ export default function Home() {
 
   return (
     <FormProvider {...methods}>
-      <div className="w-[calc(100vw-240px)] mx-auto flex justify-center items-center min-h-screen bg-gray-50 px-4">
+      <div className="w-[calc(100vw-240px)] mx-auto flex items-center min-h-screen bg-gray-50 px-4">
         <main className="w-full p-6">
           <div className="flex flex-col md:flex-row gap-6 justify-center">
             {/* User Info */}
             <div className="bg-white shadow rounded-lg p-6 w-full max-w-sm">
-              <h2 className="text-xl font-bold mb-4">あなたの基本情報</h2>
-              <p className="text-lg font-semibold">name: {mockUser.name}</p>
-              <p className="text-lg">tel: {mockUser.phoneNumber}</p>
-              <p className="text-lg">credit: {mockUser.credit}</p>
+              <h2 className="text-2xl font-bold mb-4">ユーザー情報</h2>
+              <p className="text-lg font-semibold">名前: {mockUser.name}</p>
+              <p className="text-lg">電話番号: {mockUser.phoneNumber}</p>
+              <p className="text-lg">所持金: {mockUser.credit}円</p>
             </div>
 
             {/* Dial Area */}
@@ -88,7 +90,7 @@ export default function Home() {
               </div>
 
               <div className="bg-[#82dc64] shadow rounded-lg p-6 w-[300px]">
-                <input
+                <Input
                   type="tel"
                   className="w-full border mb-1 p-2 text-center bg-[#debf87] text-lg rounded"
                   value={input}
@@ -121,7 +123,7 @@ export default function Home() {
                     "0",
                     "call",
                   ].map((d) => (
-                    <button
+                    <Button
                       key={d}
                       type={d === "call" ? "submit" : "button"}
                       className="bg-[#363340] hover:bg-gray-300 transition h-[80px] w-[80px] text-[50px] text-[#ecc858] font-medium border-4 border-white rounded-full"
@@ -133,7 +135,7 @@ export default function Home() {
                       }}
                     >
                       {d}
-                    </button>
+                    </Button>
                   ))}
                 </div>
               </div>
