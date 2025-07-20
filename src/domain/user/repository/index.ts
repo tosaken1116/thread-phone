@@ -21,10 +21,21 @@ const createUserRepository = (client: ReturnType<typeof UserServiceClientCreator
           Authorization: `Bearer ${token}`
         }
       });
-      if (!response.user) {
+      if (!response.me) {
         throw new Error("User creation failed");
       }
-      return response.user;
+      return response;
+    },
+    getMe:async ()=>{
+      const response = await client.getMe({},{
+        headers:{
+          Authorization: `Bearer ${token}`
+        }
+      });
+      if (!response.me) {
+        throw new Error("User retrieval failed");
+      }
+      return response.me;
     }
   };
 };
