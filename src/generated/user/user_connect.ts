@@ -3,7 +3,7 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import { SignUpRequest, SignUpResponse } from "./rpc/user_pb";
+import { SignInRequest, SignInResponse, SignUpRequest, SignUpResponse } from "./rpc/user_pb";
 import { MethodKind } from "@bufbuild/protobuf";
 
 /**
@@ -19,6 +19,15 @@ export const UserService = {
       name: "SignUp",
       I: SignUpRequest,
       O: SignUpResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc string_phone.user.UserService.SignIn
+     */
+    signIn: {
+      name: "SignIn",
+      I: SignInRequest,
+      O: SignInResponse,
       kind: MethodKind.Unary,
     },
   }
