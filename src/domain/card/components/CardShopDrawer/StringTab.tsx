@@ -12,31 +12,39 @@ const mockStrings: String[] = [
   {
     $typeName: "string_phone.strings.resources.String",
     id: "s1",
-    name: "Aの糸",
+    name: "普通の糸",
     length: 1,
     durability: 100,
     type: StringType.A,
   },
   {
     $typeName: "string_phone.strings.resources.String",
-    id: "s2",
-    name: "Bの糸",
-    length: 2,
-    durability: 100,
-    type: StringType.B,
-  },
-  {
-    $typeName: "string_phone.strings.resources.String",
     id: "s3",
-    name: "Cの糸",
+    name: "ゴム製の糸",
     length: 3,
     durability: 100,
     type: StringType.C,
   },
   {
     $typeName: "string_phone.strings.resources.String",
+    id: "s6",
+    name: "カーボン製の糸",
+    length: 6,
+    durability: 100,
+    type: StringType.F,
+  },
+  {
+    $typeName: "string_phone.strings.resources.String",
+    id: "s2",
+    name: "金属製の糸",
+    length: 2,
+    durability: 100,
+    type: StringType.B,
+  },
+  {
+    $typeName: "string_phone.strings.resources.String",
     id: "s4",
-    name: "Dの糸",
+    name: "ダイヤモンド製の糸",
     length: 4,
     durability: 100,
     type: StringType.D,
@@ -44,24 +52,15 @@ const mockStrings: String[] = [
   {
     $typeName: "string_phone.strings.resources.String",
     id: "s5",
-    name: "Eの糸",
+    name: "オリハルコン製の糸",
     length: 5,
     durability: 100,
     type: StringType.E,
-  },
-  {
-    $typeName: "string_phone.strings.resources.String",
-    id: "s6",
-    name: "Fの糸",
-    length: 6,
-    durability: 100,
-    type: StringType.F,
   },
 ];
 
 export function StringTab() {
   const [selectedString, setSelectedString] = useState<StringType | null>(null);
-  const [length, setLength] = useState(1);
   const client = useQueryClient();
   const repository = useStringRepository();
   const { mutate: purchaseString } = useMutation(
@@ -82,6 +81,9 @@ export function StringTab() {
         length: 1,
       });
     }
+    setTimeout(() => {
+      alert(`${StringType[selectedString]} を ${length}m 購入しました`);
+    }, 300);
   };
 
   return (
@@ -101,16 +103,6 @@ export function StringTab() {
           </li>
         ))}
       </ul>
-      <div className="flex items-end text-[30px] gap-1">
-        <Input
-          type="text"
-          className="w-[80px] mt-4 "
-          placeholder="糸の長さを入力"
-          value={length}
-          onChange={(e) => setLength(Number(e.target.value))}
-        />
-        m
-      </div>
       <Button
         type="submit"
         className="w-[180px] h-[50px] text-sm bg-green-500 text-white rounded-[9px] mx-auto mt-4 cursor-pointer"

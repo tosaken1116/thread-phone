@@ -78,11 +78,16 @@ export function CardTab() {
 
   const handlePurchase = () => {
     if (!selectedCard) return;
-    purchaseCard({
-      $typeName: "string_phone.cards.rpc.BuyCardRequest",
-      name: selectedCard.toString(),
-      credit: 100,
-    });
+    if (confirm(`${CardType[selectedCard]} を購入`)) {
+      purchaseCard({
+        $typeName: "string_phone.cards.rpc.BuyCardRequest",
+        name: selectedCard.toString(),
+        credit: 100,
+      });
+    }
+    setTimeout(() => {
+      alert(`${CardType[selectedCard]} を 1枚 購入しました`);
+    }, 300);
   };
 
   return (
@@ -91,12 +96,16 @@ export function CardTab() {
         {mockCards.map((card) => (
           <li
             key={card.id}
-            className={`w-[180px] h-[330px] cursor-pointer hover:scale-105 transition-all duration-300 ${
-              selectedCard === card.type ? "bg-blue-500" : ""
-            }`}
+            className={`w-[186px] h-[336px] cursor-pointer hover:scale-105 transition-all duration-300}`}
             onClick={() => handleCardClick(card.type)}
           >
-            <div className="w-[180px] h-[270px] rounded-[9px]">
+            <div
+              className={`w-[186px] h-[276px] rounded-[9px] border-3 ${
+                selectedCard === card.type
+                  ? " border-blue-500"
+                  : " border-transparent"
+              }`}
+            >
               {telecards[card.type]}
             </div>
             <div className="text-md text-center font-light">
