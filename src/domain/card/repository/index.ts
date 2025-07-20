@@ -8,16 +8,23 @@ export const useCardRepository = ()=>{
   if (!baseURL) {
     throw new Error("NEXT_PUBLIC_API_BASE_URL is not defined");
   }
+  const token = useMemo(() => localStorage.getItem("token"), []);
   const client = useMemo(() => CardServiceClientCreator(baseURL), [baseURL]);
-  const repository  = useMemo(() => createCardRepository(client), [client]);
+  const repository  = useMemo(() => createCardRepository(client,token!), [client]);
   return repository
 }
 
 
- const createCardRepository = (client: ReturnType<typeof CardServiceClientCreator>) => {
+ const createCardRepository = (client: ReturnType<typeof CardServiceClientCreator>, token: string) => {
   return {
     getCards: async () => {
-      const response = await client.getCards({});
+      const response = await client.getCards({
+
+      },{
+                headers: {
+          Authorization: `Bearer ${token}`
+        }
+      });
       return response.cards;
     },
     getTemplateCards: async()=>{

@@ -7,15 +7,21 @@ export const useStringRepository = () => {
   if (!baseURL) {
     throw new Error("NEXT_PUBLIC_API_BASE_URL is not defined");
   }
+    const token = useMemo(() => localStorage.getItem("token"), []);
+
   const client = useMemo(() => StringItemServiceClientCreator(baseURL), [baseURL]);
-  const repository = useMemo(() => createStringRepository(client), [client]);
+  const repository = useMemo(() => createStringRepository(client,token!), [client]);
   return repository;
 };
 
-const createStringRepository = (client: ReturnType<typeof StringItemServiceClientCreator>) => {
+const createStringRepository = (client: ReturnType<typeof StringItemServiceClientCreator>, token: string) => {
   return {
     getStrings: async () => {
-      const response = await client.getStrings({});
+      const response = await client.getStrings({},{
+        headers: {
+          Authorization: `Bearer ${token}`
+        }
+      });
       return response.strings;
     },
     getTemplateStrings: async () => {
