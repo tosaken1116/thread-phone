@@ -87,10 +87,10 @@ export default function Home() {
                 />
               </div>
 
-              <div className="bg-white shadow rounded-lg p-6 w-[300px]">
+              <div className="bg-[#82dc64] shadow rounded-lg p-6 w-[300px]">
                 <input
                   type="tel"
-                  className="w-full border mb-1 p-2 text-center text-lg rounded"
+                  className="w-full border mb-1 p-2 text-center bg-[#debf87] text-lg rounded"
                   value={input}
                   readOnly
                   {...register("phoneNumber", {
@@ -124,7 +124,7 @@ export default function Home() {
                     <button
                       key={d}
                       type={d === "call" ? "submit" : "button"}
-                      className="bg-[#363340] hover:bg-gray-300 transition p-4 rounded text-lg text-[#ecc858] font-medium border-4 border-white"
+                      className="bg-[#363340] hover:bg-gray-300 transition h-[80px] w-[80px] text-[50px] text-[#ecc858] font-medium border-4 border-white rounded-full"
                       onClick={() => {
                         if (d === "call") return;
                         if (d === "del")

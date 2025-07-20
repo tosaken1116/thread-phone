@@ -19,12 +19,12 @@ type Card = {
 
 const telecards: Record<CardType, React.ReactNode> = {
   [CardType.UNSPECIFIED]: null,
-  [CardType.A]: <CardCheap scale={0.1} price={100} />,
-  [CardType.B]: <CardCheap scale={0.1} price={200} />,
-  [CardType.C]: <CardGeneral50 scale={0.1} />,
-  [CardType.D]: <CardGeneral105 scale={0.1} />,
-  [CardType.E]: <CardNagano1998 scale={0.1} />,
-  [CardType.F]: <CardTokyo1964 scale={0.1} />,
+  [CardType.A]: <CardCheap scale={0.15} price={100} />,
+  [CardType.B]: <CardCheap scale={0.15} price={200} />,
+  [CardType.C]: <CardGeneral50 scale={0.15} />,
+  [CardType.D]: <CardGeneral105 scale={0.15} />,
+  [CardType.E]: <CardNagano1998 scale={0.15} />,
+  [CardType.F]: <CardTokyo1964 scale={0.15} />,
 };
 
 type Props = {
@@ -75,14 +75,14 @@ export default function CardList({ cards }: Props) {
         {mockCards.map((card) => (
           <li
             key={card.id}
-            className={`w-[60px] h-[95px] cursor-pointer hover:scale-105 transition-all duration-300 rounded-lg p-1 ${
+            className={`w-[90px] h-[135px] cursor-pointer hover:scale-105 transition-all duration-300 rounded-lg p-1 ${
               card.id === cardId ? "bg-blue-500" : "bg-white"
             }`}
             onClick={() => {
               setValue("cardId", card.id); // 💡 フォームに反映
             }}
           >
-            <div className="w-[60px] h-[95px] rounded-[9px] mx-auto">
+            <div className="w-[90px] h-[135px] rounded-[9px] mx-auto">
               {telecards[card.type]}
             </div>
           </li>
