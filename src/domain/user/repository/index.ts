@@ -7,15 +7,20 @@ export const useUserRepository = () => {
   if (!baseURL) {
     throw new Error("NEXT_PUBLIC_API_BASE_URL is not defined");
   }
+  const token = useMemo(() => localStorage.getItem("token"), []);
   const client = useMemo(() => UserServiceClientCreator(baseURL), [baseURL]);
-  const repository = useMemo(() => createUserRepository(client), [client]);
+  const repository = useMemo(() => createUserRepository(client,token!), [client]);
   return repository;
 };
 
-const createUserRepository = (client: ReturnType<typeof UserServiceClientCreator>) => {
+const createUserRepository = (client: ReturnType<typeof UserServiceClientCreator>,token:string) => {
   return {
     signUp: async (req: SignUpRequest) => {
-      const response = await client.signUp(req);
+      const response = await client.signUp(req,{
+        headers:{
+          Authorization: `Bearer ${token}`
+        }
+      });
       if (!response.user) {
         throw new Error("User creation failed");
       }
